@@ -1,13 +1,14 @@
 {
     "name": "nightowl",
     "displayName": "nightowl",
-    "description": "switch light and dark mode automatically with macos mojeva light and dark switch",
+    "description": "switch light and dark theme automatically",
     "version": "0.0.1",
     "publisher": "mussein",
     "author": {
         "name": "mussein apathy",
         "email": "xdzandjxf@gmail.com"
     },
+    "icon": "images/nightowl.png",
     "galleryBanner": {
         "color": "#616161",
         "theme": "dark"
