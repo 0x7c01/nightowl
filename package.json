@@ -1,0 +1,73 @@
+{
+    "name": "nightowl",
+    "displayName": "nightowl",
+    "description": "switch light and dark mode automatically with macos mojeva light and dark switch",
+    "version": "0.0.1",
+    "publisher": "mussein",
+    "author": {
+        "name": "mussein apathy",
+        "email": "xdzandjxf@gmail.com"
+    },
+    "galleryBanner": {
+        "color": "#616161",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Other",
+        "Themes"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "nightowl configuration",
+            "properties": {
+                "nightowl.lightColorTheme": {
+                    "type": "string",
+                    "default": "Solarized Light",
+                    "description": "light colorTheme"
+                },
+                "nightowl.darkColorTheme": {
+                    "type": "string",
+                    "default": "Default Dark+",
+                    "description": "dark colorTheme"
+                },
+                "nightowl.sunRist": {
+                    "type": "number",
+                    "default": 6,
+                    "description": "sunrise time in 24hrs format"
+                },
+                "nightowl.sunSet": {
+                    "type": "number",
+                    "default": 18,
+                    "description": "sunset time in 24hrs format"
+                },
+                "nightowl.mode": {
+                    "type": "string",
+                    "default": "schedule",
+                    "description": "mode in system or schedule"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "run-jxa": "^1.2.0"
+    }
+}
