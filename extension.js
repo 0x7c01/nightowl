@@ -69,7 +69,7 @@ function activate(context) {
             } else { // now is light mode
                 if (config.get('colorTheme') !== options.lightColorTheme) {
                     config.update('colorTheme', options.lightColorTheme, true);
-                    vscode.window.showInformationMessage(`Activated ${options.lightcolorTheme} theme`);
+                    vscode.window.showInformationMessage(`Activated ${options.lightColorTheme} theme`);
                 }
             }
         } else {   //now use schedule
