@@ -48,9 +48,7 @@ function activate(context) {
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
     // The code you place here will be executed every time your command is executed
-    const config = vscode.workspace.getConfiguration('workbench');
     const prop = 'Application("System Events").appearancePreferences.darkMode';
-    const currentHours = new Date().getHours();
     
     changeTheme();
     options.setIntervalId = setInterval(() => {
@@ -58,29 +56,31 @@ function activate(context) {
     }, 60000);
     
     function changeTheme() {
+        const config = vscode.workspace.getConfiguration('workbench');
+        const currentHours = new Date().getHours();
         // same as system
         if (options.platform === 'darwin' && options.mode === 'system') {
             // now is dark mode
             if (runJxa.sync(`return ${prop}()`)) {
-                if (config.get('colorTheme') !== options.darkColorTheme) {
+                if (config.get('colorTheme') != options.darkColorTheme) {
                     config.update('colorTheme', options.darkColorTheme, true);
-                    vscode.window.showInformationMessage(`Activated ${options.darkColorTheme} theme`);
+                    vscode.window.showInformationMessage(`current theme: ${config.get('colorTheme')}, Activated ${options.darkColorTheme} theme`);
                 }
             } else { // now is light mode
-                if (config.get('colorTheme') !== options.lightColorTheme) {
+                if (config.get('colorTheme') != options.lightColorTheme) {
                     config.update('colorTheme', options.lightColorTheme, true);
-                    vscode.window.showInformationMessage(`Activated ${options.lightColorTheme} theme`);
+                    vscode.window.showInformationMessage(`current theme: ${config.get('colorTheme')}, Activated ${options.lightColorTheme} theme`);
                 }
             }
         } else {   //now use schedule
             // light mode
             if (currentHours >= options.sunRise && currentHours <= options.sunSet ) {
-                if (config.get('colorTheme') !== options.lightColorTheme) {
+                if (config.get('colorTheme') != options.lightColorTheme) {
                     config.update('colorTheme', options.lightColorTheme, true);
                     vscode.window.showInformationMessage(`Activated ${options.lightColorTheme} theme`);
                 }
             } else {
-                if (config.get('colorTheme') !== options.darkColorTheme) {
+                if (config.get('colorTheme') != options.darkColorTheme) {
                     config.update('colorTheme', options.darkColorTheme, true);
                     vscode.window.showInformationMessage(`Activated ${options.darkColorTheme} theme`);
                 }
