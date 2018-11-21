@@ -5,8 +5,8 @@
     "version": "0.0.1",
     "publisher": "avaRcoL",
     "author": {
-        "name": "mussein apathy",
-        "email": "xdzandjxf@gmail.com"
+        "name": "zeno zhengs",
+        "email": "zenozhengs@gmail.com"
     },
     "icon": "images/nightowl.png",
     "galleryBanner": {
@@ -63,7 +63,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/AvaRcoL/nightowl.git"
+        "url": "https://github.com/ZenoZhengs/nightowl.git"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
