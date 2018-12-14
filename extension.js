@@ -64,12 +64,12 @@ function activate(context) {
             if (runJxa.sync(`return ${prop}()`)) {
                 if (config.get('colorTheme') != options.darkColorTheme) {
                     config.update('colorTheme', options.darkColorTheme, true);
-                    vscode.window.showInformationMessage(`current theme: ${config.get('colorTheme')}, Activated ${options.darkColorTheme} theme`);
+                    vscode.window.showInformationMessage(`Activated ${options.darkColorTheme} theme`);
                 }
             } else { // now is light mode
                 if (config.get('colorTheme') != options.lightColorTheme) {
                     config.update('colorTheme', options.lightColorTheme, true);
-                    vscode.window.showInformationMessage(`current theme: ${config.get('colorTheme')}, Activated ${options.lightColorTheme} theme`);
+                    vscode.window.showInformationMessage(`Activated ${options.lightColorTheme} theme`);
                 }
             }
         } else {   //now use schedule
