@@ -66,11 +66,11 @@
         "url": "https://github.com/ZenoZhengs/nightowl.git"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.21",
-        "eslint": "^4.11.0",
-        "@types/node": "^8.10.25",
-        "@types/mocha": "^2.2.42"
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.15",
+        "eslint": "^5.10.0",
+        "typescript": "^3.2.2",
+        "vscode": "^1.1.26"
     },
     "dependencies": {
         "run-jxa": "^1.2.0"
